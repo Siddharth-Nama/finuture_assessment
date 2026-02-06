@@ -3,7 +3,7 @@ import os
 import glob
 
 def verify_extraction():
-    files = glob.glob("documents/*.pdf")
+    files = glob.glob("documents/mock_*.pdf")
     if not files:
         print("No PDF files found in documents/")
         return

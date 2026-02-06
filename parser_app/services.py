@@ -4,7 +4,9 @@ import re
 class ParserService:
     def parse(self, file_path):
         text = self._extract_text(file_path)
-        print(f"--- DEBUG TEXT START for {file_path} ---\n{text}\n--- DEBUG TEXT END ---")
+        with open('debug_log.txt', 'a', encoding='utf-8') as f:
+            f.write(f"\n--- DEBUG TEXT START for {file_path} ---\n{text}\n--- DEBUG TEXT END ---\n")
+        
         data = {
             'policy_number': self._extract_policy_number(text),
             'holder_name': self._extract_holder_name(text),
