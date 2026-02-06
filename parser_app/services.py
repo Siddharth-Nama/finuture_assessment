@@ -32,7 +32,10 @@ class ParserService:
 
 
     def _extract_holder_name(self, text):
-        return None
+        pattern = r"(?:Name|Holder)\s*[:\-]?\s*([A-Za-z\s\.]+)"
+        match = re.search(pattern, text, re.IGNORECASE)
+        return match.group(1).strip() if match else None
+
 
     def _extract_premium_amount(self, text):
         pattern = r"Premium\s*[:\-]?\s*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})"
