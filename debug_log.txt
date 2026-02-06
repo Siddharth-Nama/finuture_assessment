@@ -1,5 +1,5 @@
 
---- DEBUG TEXT START for C:\sidd\finuture_assignment\media\documents\mock_hdfc_zFu99k9.pdf ---
+--- DEBUG TEXT START for C:\sidd\finuture_assignment\media\documents\mock_hdfc_tXUy4TB.pdf ---
 HDFC ERGO General Insurance Company Limited
 Policy Schedule
 Policy Number: 12345-67890
@@ -11,9 +11,9 @@ Start Date: 01-01-2023
 End Date: 31-12-2023
 
 --- DEBUG TEXT END ---
-Policy Pattern: Policy\s*(?:No\.?|Number)?\s*[:\-\s]*([A-Za-z0-9\-\/]+)
-Match: Schedule
-Holder Pattern: (?:Name|Holder|Proposer)\s*(?:of\s*Policy\s*Holder|Name)?\s*[:\-\s]*([A-Za-z\s\.]+)
+Policy Pattern: Policy\s*(?:No\.?|Number)?\s*[:\-\s]*([A-Za-z0-9\-\/]*\d+[A-Za-z0-9\-\/]*)
+Match: 12345-67890
+Holder Pattern 1: (?:Name|Holder|Proposer)\s*(?:of\s*Policy\s*Holder|Name)?\s*[:\-\s]*([A-Za-z\s\.]+)
 Match: Siddharth Nama
 Premium Amount
 Premium Pattern: (?:Premium|Installment\s*Premium)\s*(?:Amount)?\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})
@@ -25,7 +25,7 @@ Match: 01-01-2023
 Date Pattern ((?:End\s*Date|Maturity)): (?:End\s*Date|Maturity)\s*(?:Date)?\s*(?:of)?\s*[:\-\s]*(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4})
 Match: 31-12-2023
 
---- DEBUG TEXT START for C:\sidd\finuture_assignment\media\documents\mock_lic_X8YsQhz.pdf ---
+--- DEBUG TEXT START for C:\sidd\finuture_assignment\media\documents\mock_lic_4UlfVC3.pdf ---
 Life Insurance Corporation of India
 Policy Bond
 Policy No: 987654321
@@ -36,9 +36,9 @@ Date of Commencement: 15/05/2025
 Date of Maturity: 15/05/2045
 
 --- DEBUG TEXT END ---
-Policy Pattern: Policy\s*(?:No\.?|Number)?\s*[:\-\s]*([A-Za-z0-9\-\/]+)
-Match: Bond
-Holder Pattern: (?:Name|Holder|Proposer)\s*(?:of\s*Policy\s*Holder|Name)?\s*[:\-\s]*([A-Za-z\s\.]+)
+Policy Pattern: Policy\s*(?:No\.?|Number)?\s*[:\-\s]*([A-Za-z0-9\-\/]*\d+[A-Za-z0-9\-\/]*)
+Match: 987654321
+Holder Pattern 1: (?:Name|Holder|Proposer)\s*(?:of\s*Policy\s*Holder|Name)?\s*[:\-\s]*([A-Za-z\s\.]+)
 Match: John Doe
 Installment Premium
 Premium Pattern: (?:Premium|Installment\s*Premium)\s*(?:Amount)?\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})
@@ -50,7 +50,7 @@ Match: 15/05/2025
 Date Pattern ((?:End\s*Date|Maturity)): (?:End\s*Date|Maturity)\s*(?:Date)?\s*(?:of)?\s*[:\-\s]*(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4})
 Match: 15/05/2045
 
---- DEBUG TEXT START for C:\sidd\finuture_assignment\media\documents\mock_max_wZ3N4ZU.pdf ---
+--- DEBUG TEXT START for C:\sidd\finuture_assignment\media\documents\mock_max_7If79Gv.pdf ---
 MAX LIFE INSURANCE
 Dear Mr. Valid User,
 Welcome to Max Life.
@@ -61,85 +61,10 @@ Sum Assured : 2500000
 Risk Start Date : 10.02.2026
 
 --- DEBUG TEXT END ---
-Policy Pattern: Policy\s*(?:No\.?|Number)?\s*[:\-\s]*([A-Za-z0-9\-\/]+)
-Match: Details
-Holder Pattern: (?:Name|Holder|Proposer)\s*(?:of\s*Policy\s*Holder|Name)?\s*[:\-\s]*([A-Za-z\s\.]+)
-Match: None
-Premium Pattern: (?:Premium|Installment\s*Premium)\s*(?:Amount)?\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})
-Match: 25000.00
-Sum Assured Pattern: (?:Basic\s*)?Sum\s*Assured\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})
-Match: 2500000
-Date Pattern ((?:Start\s*Date|Commencement|Risk\s*Start\s*Date)): (?:Start\s*Date|Commencement|Risk\s*Start\s*Date)\s*(?:Date)?\s*(?:of)?\s*[:\-\s]*(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4})
-Match: 10.02.2026
-Date Pattern ((?:End\s*Date|Maturity)): (?:End\s*Date|Maturity)\s*(?:Date)?\s*(?:of)?\s*[:\-\s]*(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4})
-Match: NONE
-
---- DEBUG TEXT START for C:\sidd\finuture_assignment\media\documents\mock_hdfc_FUw4Auy.pdf ---
-HDFC ERGO General Insurance Company Limited
-Policy Schedule
-Policy Number: 12345-67890
-Name of Policy Holder: Siddharth Nama
-Premium Amount: Rs. 15,000
-Sum Assured: Rs. 5,00,000
-Period of Insurance:
-Start Date: 01-01-2023
-End Date: 31-12-2023
-
---- DEBUG TEXT END ---
-Policy Pattern: Policy\s*(?:No\.?|Number)?\s*[:\-\s]*([A-Za-z0-9\-\/]+)
-Match: Schedule
-Holder Pattern: (?:Name|Holder|Proposer)\s*(?:of\s*Policy\s*Holder|Name)?\s*[:\-\s]*([A-Za-z\s\.]+)
-Match: Siddharth Nama
-Premium Amount
-Premium Pattern: (?:Premium|Installment\s*Premium)\s*(?:Amount)?\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})
-Match: 15,000
-Sum Assured Pattern: (?:Basic\s*)?Sum\s*Assured\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})
-Match: 5,00,000
-Date Pattern ((?:Start\s*Date|Commencement|Risk\s*Start\s*Date)): (?:Start\s*Date|Commencement|Risk\s*Start\s*Date)\s*(?:Date)?\s*(?:of)?\s*[:\-\s]*(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4})
-Match: 01-01-2023
-Date Pattern ((?:End\s*Date|Maturity)): (?:End\s*Date|Maturity)\s*(?:Date)?\s*(?:of)?\s*[:\-\s]*(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4})
-Match: 31-12-2023
-
---- DEBUG TEXT START for C:\sidd\finuture_assignment\media\documents\mock_lic_MEgSW0f.pdf ---
-Life Insurance Corporation of India
-Policy Bond
-Policy No: 987654321
-Proposer Name: John Doe
-Installment Premium: INR 50,000
-Basic Sum Assured: INR 1,00,00,000
-Date of Commencement: 15/05/2025
-Date of Maturity: 15/05/2045
-
---- DEBUG TEXT END ---
-Policy Pattern: Policy\s*(?:No\.?|Number)?\s*[:\-\s]*([A-Za-z0-9\-\/]+)
-Match: Bond
-Holder Pattern: (?:Name|Holder|Proposer)\s*(?:of\s*Policy\s*Holder|Name)?\s*[:\-\s]*([A-Za-z\s\.]+)
-Match: John Doe
-Installment Premium
-Premium Pattern: (?:Premium|Installment\s*Premium)\s*(?:Amount)?\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})
-Match: 50,000
-Sum Assured Pattern: (?:Basic\s*)?Sum\s*Assured\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})
-Match: 1,00,00,000
-Date Pattern ((?:Start\s*Date|Commencement|Risk\s*Start\s*Date)): (?:Start\s*Date|Commencement|Risk\s*Start\s*Date)\s*(?:Date)?\s*(?:of)?\s*[:\-\s]*(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4})
-Match: 15/05/2025
-Date Pattern ((?:End\s*Date|Maturity)): (?:End\s*Date|Maturity)\s*(?:Date)?\s*(?:of)?\s*[:\-\s]*(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4})
-Match: 15/05/2045
-
---- DEBUG TEXT START for C:\sidd\finuture_assignment\media\documents\mock_max_9F83D4v.pdf ---
-MAX LIFE INSURANCE
-Dear Mr. Valid User,
-Welcome to Max Life.
-Your Policy Details are as follows:
-Policy Number : MAX-2026-XYZ
-Premium : 25000.00
-Sum Assured : 2500000
-Risk Start Date : 10.02.2026
-
---- DEBUG TEXT END ---
-Policy Pattern: Policy\s*(?:No\.?|Number)?\s*[:\-\s]*([A-Za-z0-9\-\/]+)
-Match: Details
-Holder Pattern: (?:Name|Holder|Proposer)\s*(?:of\s*Policy\s*Holder|Name)?\s*[:\-\s]*([A-Za-z\s\.]+)
-Match: None
+Policy Pattern: Policy\s*(?:No\.?|Number)?\s*[:\-\s]*([A-Za-z0-9\-\/]*\d+[A-Za-z0-9\-\/]*)
+Match: MAX-2026-XYZ
+Holder Pattern 2: Dear\s+(?:Mr\.|Mrs\.|Ms\.|Dr\.)?\s*([A-Za-z\s\.]+)[,\n]
+Match: Valid User
 Premium Pattern: (?:Premium|Installment\s*Premium)\s*(?:Amount)?\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})
 Match: 25000.00
 Sum Assured Pattern: (?:Basic\s*)?Sum\s*Assured\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})
