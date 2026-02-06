@@ -29,34 +29,40 @@ class ParserService:
         return text
 
     def _extract_policy_number(self, text):
-        # Matches: Policy No: 123, Policy Number : 123, Policy No 123
         pattern = r"Policy\s*(?:No\.?|Number)?\s*[:\-\s]*([A-Za-z0-9\-\/]+)"
         match = re.search(pattern, text, re.IGNORECASE)
+        with open('debug_log.txt', 'a', encoding='utf-8') as f:
+            f.write(f"Policy Pattern: {pattern}\nMatch: {match.group(1) if match else 'NONE'}\n")
         return match.group(1) if match else None
 
     def _extract_holder_name(self, text):
-        # Matches: Name: John, Name of Policy Holder: John, Proposer Name: John
         pattern = r"(?:Name|Holder|Proposer)\s*(?:of\s*Policy\s*Holder|Name)?\s*[:\-\s]*([A-Za-z\s\.]+)"
         match = re.search(pattern, text, re.IGNORECASE)
-        # Clean up result (remove trailing newlines/spaces)
-        return match.group(1).strip() if match else None
+        result = match.group(1).strip() if match else None
+        with open('debug_log.txt', 'a', encoding='utf-8') as f:
+            f.write(f"Holder Pattern: {pattern}\nMatch: {result}\n")
+        return result
 
     def _extract_premium_amount(self, text):
-        # Matches: Premium: 1000, Premium Amount: 1000, Installment Premium: 1000
         pattern = r"(?:Premium|Installment\s*Premium)\s*(?:Amount)?\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})"
         match = re.search(pattern, text, re.IGNORECASE)
+        with open('debug_log.txt', 'a', encoding='utf-8') as f:
+            f.write(f"Premium Pattern: {pattern}\nMatch: {match.group(1) if match else 'NONE'}\n")
         return match.group(1) if match else None
 
     def _extract_sum_assured(self, text):
-        # Matches: Sum Assured: 1000, Basic Sum Assured: 1000
         pattern = r"(?:Basic\s*)?Sum\s*Assured\s*[:\-\s]*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})"
         match = re.search(pattern, text, re.IGNORECASE)
+        with open('debug_log.txt', 'a', encoding='utf-8') as f:
+            f.write(f"Sum Assured Pattern: {pattern}\nMatch: {match.group(1) if match else 'NONE'}\n")
         return match.group(1) if match else None
 
     def _extract_date(self, text, keyword):
-        # Matches: Start Date: 01-01-2000, Date of Commencement: 01/01/2000
-        # Keyword is a regex partial, e.g., (?:Start Date|Commencement)
         pattern = rf"{keyword}\s*(?:Date)?\s*(?:of)?\s*[:\-\s]*(\d{{1,2}}[-/.]\d{{1,2}}[-/.]\d{{2,4}})"
         match = re.search(pattern, text, re.IGNORECASE)
+        
+        with open('debug_log.txt', 'a', encoding='utf-8') as f:
+            f.write(f"Date Pattern ({keyword}): {pattern}\nMatch: {match.group(1) if match else 'NONE'}\n")
+        
         return match.group(1) if match else None
 
