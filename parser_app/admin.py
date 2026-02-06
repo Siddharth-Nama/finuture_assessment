@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import InsuranceDocument, ExtractedData
 
-# Register your models here.
+admin.site.register(InsuranceDocument)
+admin.site.register(ExtractedData)
