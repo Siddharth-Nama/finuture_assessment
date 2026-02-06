@@ -35,10 +35,14 @@ class ParserService:
         return None
 
     def _extract_premium_amount(self, text):
-        return None
+        pattern = r"Premium\s*[:\-]?\s*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})"
+        match = re.search(pattern, text, re.IGNORECASE)
+        return match.group(1) if match else None
 
     def _extract_sum_assured(self, text):
-        return None
+        pattern = r"Sum\s*Assured\s*[:\-]?\s*(?:Rs\.?|INR)?\s*([\d,]+\.?\d{0,2})"
+        match = re.search(pattern, text, re.IGNORECASE)
+        return match.group(1) if match else None
 
     def _extract_date(self, text, keyword):
         pattern = rf"{keyword}\s*[:\-]?\s*(\d{{1,2}}[-/.]\d{{1,2}}[-/.]\d{{2,4}})"
