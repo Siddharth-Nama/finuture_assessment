@@ -26,7 +26,10 @@ class ParserService:
         return text
 
     def _extract_policy_number(self, text):
-        return None
+        pattern = r"Policy\s*(?:No\.?|Number)?\s*[:#]?\s*([A-Za-z0-9\-]+)"
+        match = re.search(pattern, text, re.IGNORECASE)
+        return match.group(1) if match else None
+
 
     def _extract_holder_name(self, text):
         return None
