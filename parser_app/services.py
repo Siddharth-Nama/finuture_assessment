@@ -41,4 +41,7 @@ class ParserService:
         return None
 
     def _extract_date(self, text, keyword):
-        return None
+        pattern = rf"{keyword}\s*[:\-]?\s*(\d{{1,2}}[-/.]\d{{1,2}}[-/.]\d{{2,4}})"
+        match = re.search(pattern, text, re.IGNORECASE)
+        return match.group(1) if match else None
+
